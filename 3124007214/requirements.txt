@@ -1,0 +1,2 @@
+# 本程序仅使用Python标准库（sys/re/math/collections），无第三方依赖。
+# 评测环境无需执行pip install。
