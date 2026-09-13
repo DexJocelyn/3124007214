@@ -36,12 +36,10 @@ def count_grams(text, n=2):
 
 
 def cosine_similarity(freq_a, freq_b):
-    # numerator
     dot = 0
     for k, v in freq_a.items():
         dot += v * freq_b.get(k, 0)
 
-    # denominator
     sum_sq_orig = 0
     for v in freq_a.values():
         sum_sq_orig += v * v
@@ -52,7 +50,6 @@ def cosine_similarity(freq_a, freq_b):
         sum_sq_copy += v * v
     norm_copy = math.sqrt(sum_sq_copy)
 
-    # denominator can't be zero
     if norm_orig == 0 or norm_copy == 0:
         return 0.0
 
@@ -78,7 +75,6 @@ def main():
         print("用法: python main.py <原文路径> <抄袭版路径> <答案输出路径>")
         return
 
-    # three routines
     orig_path = sys.argv[1]
     copy_path = sys.argv[2]
     out_path = sys.argv[3]
@@ -93,5 +89,5 @@ def main():
         print("答案已写入文件:", out_path)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()
