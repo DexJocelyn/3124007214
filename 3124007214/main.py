@@ -27,7 +27,7 @@ def clean_text(text):
 def split_grams(text, n=2):
     grams = []
     for i in range(len(text) - n + 1):
-        grams.append(text[i:i + n])
+        grams.append(text[i : i + n])
     return grams
 
 
